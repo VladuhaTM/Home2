@@ -3,6 +3,11 @@ import Home2.Balance;
 import Home3.Bell;
 import Home4.OddEvenSeparator;
 import Home5.Table;
+import Home6.geometry2d.Circle;
+import Home6.geometry2d.Rectangle;
+import Home6.geometry3d.Cylinder;
+import Home6.exceptions.InvalidParameterException;
+import Home6.exceptions.NegativeHeightException;
 
 public class Main {
     public static void main(String[] args) {
@@ -71,6 +76,37 @@ public class Main {
         System.out.println("Number of columns: " + table.cols());
 
         System.out.println("Arithmetic mean: " + table.average());
+
+        System.out.println("\nTask 6: ");
+
+        try {
+            // Создаем круг и прямоугольник
+            Circle circle = new Circle(5);
+            Rectangle rectangle = new Rectangle(4, 6);
+
+            // Выводим информацию о фигурах
+            System.out.println(circle);
+            System.out.println("Area of a circle: " + circle.area());
+            System.out.println("Perimeter of a circle: " + circle.perimeter());
+
+            System.out.println(rectangle);
+            System.out.println("Area of a rectangle: " + rectangle.area());
+            System.out.println("The perimeter of a rectangle: " + rectangle.perimeter());
+
+            // Создаем цилиндры
+            Cylinder cylinder1 = new Cylinder(circle, 10);
+            Cylinder cylinder2 = new Cylinder(rectangle, 8);
+
+            // Выводим информацию о цилиндрах
+            System.out.println(cylinder1);
+            System.out.println("Volume of a cylinder with a circular base: " + cylinder1.volume());
+
+            System.out.println(cylinder2);
+            System.out.println("Volume of a cylinder with a rectangular base: " + cylinder2.volume());
+
+        } catch (InvalidParameterException | NegativeHeightException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 }
 
