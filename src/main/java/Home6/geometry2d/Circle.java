@@ -7,7 +7,7 @@ public class Circle implements Figure {
 
     public Circle(double radius) {
         if (radius <= 0) {
-            throw new InvalidParameterException("Радиус должен быть положительным числом.");
+            throw new InvalidParameterException("The radius must be a positive number..");
         }
         this.radius = radius;
     }
@@ -24,6 +24,6 @@ public class Circle implements Figure {
 
     @Override
     public String toString() {
-        return "Круг [радиус = " + radius + "]";
+        return "Circle [radius = " + radius + "]";
     }
 }

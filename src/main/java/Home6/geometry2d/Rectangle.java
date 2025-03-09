@@ -9,7 +9,7 @@ public class Rectangle implements Figure {
     // Конструктор
     public Rectangle(double width, double height) {
         if (width <= 0 || height <= 0) {
-            throw new InvalidParameterException("Ширина и высота должны быть положительными числами.");
+            throw new InvalidParameterException("Width and height must be positive numbers..");
         }
         this.width = width;
         this.height = height;
@@ -27,6 +27,6 @@ public class Rectangle implements Figure {
 
     @Override
     public String toString() {
-        return "Прямоугольник [ширина = " + width + ", высота = " + height + "]";
+        return "Rectangle [width = " + width + ", height= " + height + "]";
     }
 }
